@@ -8,14 +8,22 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-console.log(process.env.DB_USER);
-console.log(process.env.DB_PASS);
+// console.log(process.env.DB_USER);
+// console.log(process.env.DB_PASS);
 
 
 
 // const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority`;
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://car:FC1laBnYDpSufLIY@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority`;
+
+
+const uri = "mongodb+srv://user:123@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority";
+
+
+
+// var uri = "mongodb://user:123@ac-tbonrbi-shard-00-00.qxjq89v.mongodb.net:27017,ac-tbonrbi-shard-00-01.qxjq89v.mongodb.net:27017,ac-tbonrbi-shard-00-02.qxjq89v.mongodb.net:27017/?ssl=true&replicaSet=atlas-chrptl-shard-0&authSource=admin&retryWrites=true&w=majority";
+
 
 console.log(uri);
 
@@ -25,7 +33,7 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  },
+  }
 });
 
 async function run() {
