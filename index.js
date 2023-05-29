@@ -18,14 +18,16 @@ app.use(express.json());
 // const uri = `mongodb+srv://car:FC1laBnYDpSufLIY@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority`;
 
 
-const uri = "mongodb+srv://user:123@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://user:123@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority";
 
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qxjq89v.mongodb.net/?retryWrites=true&w=majority`;
+console.log(uri)
 
 
 // var uri = "mongodb://user:123@ac-tbonrbi-shard-00-00.qxjq89v.mongodb.net:27017,ac-tbonrbi-shard-00-01.qxjq89v.mongodb.net:27017,ac-tbonrbi-shard-00-02.qxjq89v.mongodb.net:27017/?ssl=true&replicaSet=atlas-chrptl-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 
-console.log(uri);
+// console.log(uri);
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
